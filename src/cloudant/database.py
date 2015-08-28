@@ -489,6 +489,32 @@ class CloudantDatabase(CouchDatabase):
         resp.raise_for_status()
         return resp.json()
 
+    def index(self):
+        """
+        GET /db/_index Returns existing indexes
+        """
+        pass
+
+    def find(self, selector, **kwargs):
+        """
+        POST /db/_find
+
+        Queries an index and returns the results
+
+        @param selector: dict describing criteria used to select documents.
+        @param limit: Maximum number of results returned.
+        @param skip: Skip this number of records before starting to
+           return the results
+        @param sort: list of dicts containing field name as keys and value as
+            direction
+            Example: [{"fieldName1": "desc"}, {"fieldName2": "asc" }]
+        @param fields: specify fields to return, if None returns all
+        @param r: Read quorum needed for the result.
+        @param bookmark: str that enables you to specify which page of
+            results you require. Only used for text indexes.
+        """
+        pass
+
     def shards(self):
         """
         GET /db/_shards Returns information about the shards in a database or the shard a document belongs to

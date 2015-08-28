@@ -28,6 +28,11 @@ ARG_TYPES = {
     "stale": basestring,
     "startkey": (basestring, Sequence),
     "startkey_docid": basestring,
+    "selector": dict,
+    "sort": dict,
+    "fields": dict,
+    "r": int,
+    "bookmark": str,
 }
 
 TYPE_CONVERTERS = {
@@ -39,6 +44,7 @@ TYPE_CONVERTERS = {
     tuple: lambda x: json.dumps(list(x)),
     int: lambda x: x,
     bool: lambda x: 'true' if x else 'false',
+    dict: lambda x: json.dumps(x),
     types.NoneType: lambda x: x
 }
 
