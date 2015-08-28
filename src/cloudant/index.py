@@ -29,7 +29,7 @@ ARG_TYPES = {
     "startkey": (basestring, Sequence),
     "startkey_docid": basestring,
     "selector": dict,
-    "sort": dict,
+    "sort": Sequence,
     "fields": dict,
     "r": int,
     "bookmark": str,
